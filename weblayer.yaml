@@ -1,0 +1,15 @@
+---
+- name: installing weblayer
+  hosts: web
+  user: root
+  become: yes
+
+  tasks:
+  - name: install apache
+    yum:
+      name: httpd
+      state: present
+   - name: start apache
+     service:
+       name: httpd 
+       start: started
